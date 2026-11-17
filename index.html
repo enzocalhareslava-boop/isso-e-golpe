@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Isso é golpe?</title>
+  <meta name="description" content="Cole uma mensagem suspeita e veja os sinais de golpe. O texto não sai do seu aparelho.">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%23a80f27'/%3E%3Ctext x='16' y='24' font-size='22' font-weight='700' font-family='sans-serif' text-anchor='middle' fill='%23fff'%3E%3F%3C/text%3E%3C/svg%3E">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main>
+    <section class="conferir">
+      <h1>Isso é golpe?</h1>
+      <p class="intro">Recebeu uma mensagem estranha? Cole aqui antes de responder, clicar ou pagar.</p>
+
+      <form id="form">
+        <label for="mensagem">Mensagem recebida</label>
+        <textarea id="mensagem" rows="6" maxlength="5000" placeholder="Oi, troquei de número. Salva esse aqui?"></textarea>
+        <button type="submit">Conferir mensagem</button>
+      </form>
+      <p id="aviso" class="aviso" role="alert" hidden>Cole uma mensagem para conferir.</p>
+
+      <div class="exemplos">
+        <span id="exemplos-rotulo">Ou veja um exemplo:</span>
+        <div role="group" aria-labelledby="exemplos-rotulo">
+          <button type="button" class="exemplo" data-exemplo="parente">Falso parente</button>
+          <button type="button" class="exemplo" data-exemplo="encomenda">Encomenda retida</button>
+          <button type="button" class="exemplo" data-exemplo="banco">Falsa central do banco</button>
+        </div>
+      </div>
+      <p class="privacidade">A conferência acontece no seu aparelho. O texto não é enviado nem guardado.</p>
+    </section>
+
+    <section id="resultado" class="resultado" hidden>
+      <div id="veredito" class="veredito">
+        <div class="veredito-texto">
+          <h2 id="veredito-titulo" tabindex="-1"></h2>
+          <p id="veredito-conselho"></p>
+        </div>
+      </div>
+
+      <div class="detalhes">
+        <div id="bloco-mensagem">
+          <h3>O que chamou atenção</h3>
+          <p id="mensagem-marcada" class="balao"></p>
+        </div>
+        <ul id="sinais" class="sinais"></ul>
+        <p id="limite" class="limite">Esta conferência reconhece golpes comuns, mas não todos. Ela nunca garante que uma mensagem é segura. Na dúvida, confirme com a pessoa ou a empresa por um contato que você já tinha.</p>
+      </div>
+    </section>
+
+    <section class="ja-caiu">
+      <h2>Já pagou ou passou seus dados?</h2>
+      <ol>
+        <li><strong>Pix:</strong> avise o seu banco na hora pelo canal oficial e peça o MED, o mecanismo de devolução do Pix. Quanto antes, maior a chance de recuperar.</li>
+        <li><strong>Cartão ou senha:</strong> bloqueie o cartão e troque as senhas no aplicativo oficial do banco.</li>
+        <li><strong>WhatsApp:</strong> ative a confirmação em duas etapas. Se perdeu o acesso, entre novamente com o seu número e avise seus contatos por outro meio.</li>
+        <li><strong>Registre:</strong> faça um boletim de ocorrência na delegacia eletrônica do seu estado e guarde os prints.</li>
+      </ol>
+    </section>
+  </main>
+
+  <footer>
+    <a id="compartilhar" href="https://wa.me/?text=">Mandar este site para a família no WhatsApp</a>
+    <a href="https://github.com/enzocalhareslava-boop/isso-e-golpe">Código no GitHub</a>
+  </footer>
+
+  <script type="module" src="src/app.js"></script>
+</body>
+</html>
